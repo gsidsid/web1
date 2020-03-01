@@ -60,6 +60,7 @@ def iothub_client_telemetry_sample_run(deviceID, room):
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'our very hard to guess secretfir'
 
@@ -92,6 +93,6 @@ def thank_you():
     else:
         return render_template('thank-you.html')
 
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=8000)
 
-# Run the application
-app.run(debug=True)
