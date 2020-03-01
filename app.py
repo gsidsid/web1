@@ -63,7 +63,7 @@ def iothub_client_telemetry_sample_run(deviceID, room):
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'our very hard to guess secretfir'
 
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     error = ""
     if request.method == 'POST':
@@ -88,7 +88,7 @@ def index():
 @app.route('/thank-you', methods=['GET', 'POST'])
 def thank_you():
     if request.method == 'POST':
-        return redirect(url_for('index'))
+        return redirect(url_for('/'))
     else:
         return render_template('thank-you.html')
 
